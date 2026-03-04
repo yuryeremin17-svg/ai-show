@@ -15,15 +15,11 @@
 
 ## 1. Юрий — Босс (цвет: тёплый синий)
 
-**ВАЖНО:** Загрузи СВОЁ ФОТО в Midjourney, потом используй его как --cref
-
 ```
-stylized warm illustration, confident man late 50s, broad shoulders, slight smirk, smart casual blue shirt no tie, sitting at modern desk with laptop, coffee cup nearby, Dubai skyline through window, warm golden lighting, distinctive silhouette, Pixar-style character design --ar 1:1 --cref [ТВОЁ_ФОТО_URL] --cw 70
+stylized warm illustration, confident Mediterranean man late 50s, curly grey-streaked dark hair, straight nose with slight bump, grey-blue eyes, broad shoulders, slight smirk, tanned skin, smart casual blue shirt no tie, sitting at modern desk with laptop, coffee cup nearby, Dubai skyline through window, warm golden lighting, distinctive silhouette, Pixar-style character design --ar 1:1
 ```
 
-> --cw 70 = сохранит черты лица, но стилизует. Если слишком похож — уменьши до 50. Если не похож — увеличь до 90.
-
-**URL мастер-образа:** _________________
+**URL мастер-образа:** https://cdn.midjourney.com/45f6db64-ac22-4074-b88f-ad4d396ef619/0_2.png
 
 ---
 
@@ -33,7 +29,7 @@ stylized warm illustration, confident man late 50s, broad shoulders, slight smir
 stylized warm illustration, tall thin intellectual character with round glasses, dark black turtleneck sweater, holding tablet with code on screen, thoughtful expression, slightly absent-minded, books stacked nearby, narrow elongated silhouette, Pixar-style character design --ar 1:1
 ```
 
-**URL мастер-образа:** _________________
+**URL мастер-образа:** https://cdn.midjourney.com/98ee8ef2-6e52-4899-b0fb-6613088d6302/0_2.png
 
 ---
 
@@ -43,7 +39,7 @@ stylized warm illustration, tall thin intellectual character with round glasses,
 stylized warm illustration, young tech geek character in purple hoodie, headphones around neck, hunched over tablet with news feeds and charts, excited wide eyes, laptop with stickers visible, slightly messy hair, compact energetic silhouette, Pixar-style character design --ar 1:1
 ```
 
-**URL мастер-образа:** _________________
+**URL мастер-образа:** https://cdn.midjourney.com/13bb4dae-955c-4a33-b87a-4b052779387b/0_3.png
 
 ---
 
@@ -53,37 +49,37 @@ stylized warm illustration, young tech geek character in purple hoodie, headphon
 stylized warm illustration, business-savvy character in light blue rolled-up shirt sleeves, holding financial newspaper, coffee cup in other hand, light stubble, focused composed expression, upright confident posture, early morning energy, Pixar-style character design --ar 1:1
 ```
 
-**URL мастер-образа:** _________________
+**URL мастер-образа:** https://cdn.midjourney.com/e3ab135b-34f8-4028-8c02-1de15ec8daee/0_2.png
 
 ---
 
 ## 5. Контент — Фантазёр (цвет: бордовый/цветной)
 
 ```
-stylized warm illustration, creative artistic character wearing dark red beret and colorful scarf, holding ornate quill pen, inspired dreamy upward gaze, vintage easel with canvas nearby, paint splashes, expressive wide silhouette, Pixar-style character design --ar 1:1
+stylized warm illustration, young creative man wearing dark red beret and colorful scarf, holding glowing pen over floating script pages, inspired dreamy upward gaze, film clapperboard and scattered storyboards nearby, colorful paint splashes around him, expressive wide silhouette, Pixar-style character design --ar 1:1
 ```
 
-**URL мастер-образа:** _________________
+**URL мастер-образа:** https://cdn.midjourney.com/a80b60c7-4cac-4910-8260-9f97ab7b7723/0_0.png
 
 ---
 
 ## 6. QA — Зануда-перфекционист (цвет: коричневый)
 
 ```
-stylized warm illustration, short stocky strict character in brown vest over white shirt, red pencil in hand, round glasses on tip of nose, stack of papers with red marks, pursed lips, disapproving but caring expression, wide solid silhouette, Pixar-style character design --ar 1:1
+stylized warm illustration, short stocky strict man in brown vest over white shirt, red pencil in hand, round glasses on tip of nose, stack of papers with red marks, pursed lips, disapproving but caring expression, wide solid silhouette, Pixar-style character design --ar 1:1
 ```
 
-**URL мастер-образа:** _________________
+**URL мастер-образа:** https://cdn.midjourney.com/dd1c3063-3ea4-40e6-9506-b6db410dd28a/0_2.png
 
 ---
 
 ## 7. Аналитик (Research) — Профессор (цвет: бежевый/твидовый)
 
 ```
-stylized warm illustration, professor-type character with beige tweed jacket elbow patches, surrounded by towering open books and charts, whiteboard with complex diagrams behind, absorbed in deep thought, slightly disheveled, books extending beyond silhouette, Pixar-style character design --ar 1:1
+stylized warm illustration, young slim man with messy hair and beige cardigan over t-shirt, sitting cross-legged on floor surrounded by open books and data charts, laptop balanced on knee, intense focused gaze, whiteboard covered with diagrams behind him, tall narrow silhouette, Pixar-style character design --ar 1:1
 ```
 
-**URL мастер-образа:** _________________
+**URL мастер-образа:** https://cdn.midjourney.com/7ba07167-4f2a-404b-9538-404c6e5b343f/0_0.png
 
 ---
 
@@ -93,15 +89,13 @@ stylized warm illustration, professor-type character with beige tweed jacket elb
 stylized warm illustration, stylish young woman with dark hair in neat bun, thin elegant glasses, muted green silk blouse, wristwatch on wrist, holding tablet and leather folder, calm confident expression, slight knowing smile, graceful upright silhouette, morning light, Pixar-style character design --ar 1:1
 ```
 
-**URL мастер-образа:** _________________
+**URL мастер-образа:** https://cdn.midjourney.com/736231e0-530b-4fcb-bf3c-538be3c68156/0_0.png
 
 ---
 
-## Общий стиль (--sref)
+## Общий стиль
 
-После создания первого персонажа, сохрани URL лучшей картинки и добавляй `--sref [URL]` ко всем остальным промптам — это обеспечит единый стиль.
-
-**URL стиля (--sref):** _________________
+Единый стиль обеспечивается одинаковыми ключевыми словами во всех промптах: `stylized warm illustration` + `Pixar-style character design`. Дополнительных настроек не нужно.
 
 ---
 
