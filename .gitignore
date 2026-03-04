@@ -1,0 +1,22 @@
+# Видео-файлы (тяжёлые, не в git)
+episodes/
+*.mp4
+*.mov
+*.avi
+*.mkv
+
+# Аудио-файлы
+*.mp3
+*.wav
+*.m4a
+
+# Midjourney картинки (тяжёлые)
+assets/scenes/**/*.png
+assets/scenes/**/*.jpg
+
+# Референсы персонажей хранить (лёгкие, нужны для --cref)
+# assets/characters/ — НЕ игнорируем
+
+# Системные
+.DS_Store
+*.tmp
