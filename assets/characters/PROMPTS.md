@@ -19,7 +19,7 @@
 stylized warm illustration, confident Mediterranean man late 50s, curly grey-streaked dark hair, straight nose with slight bump, grey-blue eyes, broad shoulders, slight smirk, tanned skin, smart casual blue shirt no tie, sitting at modern desk with laptop, coffee cup nearby, Dubai skyline through window, warm golden lighting, distinctive silhouette, Pixar-style character design --ar 1:1
 ```
 
-**URL мастер-образа:** https://cdn.midjourney.com/45f6db64-ac22-4074-b88f-ad4d396ef619/0_2.png
+**URL мастер-образа:** https://cdn.midjourney.com/82c8efac-5016-4808-8f14-aa25a10dd536/0_0.png
 
 ---
 
