@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
 """
-AI_SHOW — Video Assembler v1.0
-Собирает эпизод из: картинки + голос + музыка → MP4
+AI_SHOW — Video Assembler v2.0
+Собирает эпизод из: картинки/видеоклипы + голос + музыка → MP4
 
 Использование:
   python3 scripts/assemble.py S01E01
 
 Ожидаемая структура:
-  assets/scenes/S01E01/       ← картинки (01.png, 02.png, ...)
+  assets/scenes/S01E01/       ← картинки (01.png) И/ИЛИ видеоклипы (01.mp4)
   assets/voice/S01E01/        ← озвучка (01.mp3, 02.mp3, ... или full.mp3)
   assets/music/               ← фоновая музыка (bg.mp3)
   assets/music/intro.mp3      ← джингл интро (опционально)
   episodes/                   ← выход (S01E01.mp4)
 
-Картинки: Midjourney или OpenAI DALL-E (скрипт не зависит от источника)
+Сцены: если есть 01.mp4 — используется видеоклип (Kling/Runway img2vid),
+        если нет — fallback на 01.png/jpg с Ken Burns эффектом.
+        Можно миксовать: часть сцен видео, часть картинки.
+
+Картинки: Midjourney или OpenAI DALL-E
+Видеоклипы: Kling AI, Runway Gen-4, Seedance (img2vid)
 Голос: ElevenLabs, gTTS, или записанный вручную
 """
 
@@ -161,10 +166,38 @@ def add_vignette(img, strength=0.4):
 
 # ── Scene assembly ──────────────────────────────────────────────
 
+def find_scene_assets(scenes_dir):
+    """Find scene files — prefers .mp4 over .png/.jpg per scene number.
+    Returns list of (number, path, type) sorted by number.
+    type is 'video' or 'image'.
+    """
+    assets = {}  # number -> (path, type)
+
+    # Scan for videos first (higher priority)
+    for ext in ["mp4", "mov", "webm"]:
+        for f in glob.glob(os.path.join(scenes_dir, f"*.{ext}")):
+            name = os.path.splitext(os.path.basename(f))[0]
+            num = name.lstrip("0") or "0"
+            if num not in assets:  # video has priority
+                assets[num] = (f, "video")
+
+    # Then images (only if no video for that number)
+    for ext in ["png", "jpg", "jpeg"]:
+        for f in glob.glob(os.path.join(scenes_dir, f"*.{ext}")):
+            name = os.path.splitext(os.path.basename(f))[0]
+            num = name.lstrip("0") or "0"
+            if num not in assets:
+                assets[num] = (f, "image")
+
+    # Sort by number
+    sorted_assets = sorted(assets.items(), key=lambda x: int(x[0]) if x[0].isdigit() else 0)
+    return [(num, path, atype) for num, (path, atype) in sorted_assets]
+
+
 def make_scene_frames(image_path, duration_sec, voice_text="",
                       kb_direction="zoom_in", transition="dissolve",
                       highlight_words=None):
-    """Generate frames for one scene (one storyboard card)"""
+    """Generate frames for one scene from a STILL IMAGE (Ken Burns)"""
     img = Image.open(image_path).convert("RGB")
     # Resize to fit 9:16
     img = img.resize((W, H), Image.LANCZOS)
@@ -189,6 +222,44 @@ def make_scene_frames(image_path, duration_sec, voice_text="",
 
         frames.append(frame)
 
+    return frames, fade_frames
+
+
+def make_video_scene_frames(video_path, voice_text="", highlight_words=None):
+    """Extract frames from a VIDEO CLIP (Kling/Runway img2vid).
+    Resizes to W×H, applies vignette and subtitles.
+    Returns (frames, fade_frames).
+    """
+    from moviepy import VideoFileClip
+
+    clip = VideoFileClip(video_path)
+
+    # Resize to target resolution
+    clip_resized = clip.resized((W, H))
+
+    n_frames = int(clip.duration * FPS)
+    fade_frames = int(0.5 * FPS)
+    frames = []
+
+    for i in range(n_frames):
+        t = i / FPS
+        if t >= clip.duration:
+            break
+        # Get frame as numpy array → PIL Image
+        arr = clip_resized.get_frame(t)
+        frame = Image.fromarray(arr)
+
+        # Vignette (same as image scenes)
+        frame = add_vignette(frame, 0.3)
+
+        # Subtitles
+        if voice_text:
+            frame = add_subtitles(frame, voice_text,
+                                  highlight_words=highlight_words)
+
+        frames.append(frame)
+
+    clip.close()
     return frames, fade_frames
 
 
@@ -238,18 +309,18 @@ def assemble_episode(episode_id):
 
     # Check scenes
     if not os.path.isdir(scenes_dir):
-        print(f"ERROR: Папка с картинками не найдена: {scenes_dir}")
-        print(f"Положи картинки как 01.png, 02.png, ... в {scenes_dir}")
+        print(f"ERROR: Папка со сценами не найдена: {scenes_dir}")
+        print(f"Положи файлы как 01.mp4/01.png, 02.mp4/02.png, ... в {scenes_dir}")
         sys.exit(1)
 
-    scene_files = sorted(glob.glob(os.path.join(scenes_dir, "*.png")))
-    if not scene_files:
-        scene_files = sorted(glob.glob(os.path.join(scenes_dir, "*.jpg")))
-    if not scene_files:
-        print(f"ERROR: Нет картинок (png/jpg) в {scenes_dir}")
+    scene_assets = find_scene_assets(scenes_dir)
+    if not scene_assets:
+        print(f"ERROR: Нет файлов сцен (mp4/png/jpg) в {scenes_dir}")
         sys.exit(1)
 
-    print(f"Найдено {len(scene_files)} картинок")
+    n_videos = sum(1 for _, _, t in scene_assets if t == "video")
+    n_images = sum(1 for _, _, t in scene_assets if t == "image")
+    print(f"Найдено {len(scene_assets)} сцен: {n_videos} видео + {n_images} картинок")
 
     # Check voice (optional)
     voice_files = []
@@ -296,15 +367,20 @@ def assemble_episode(episode_id):
     all_frames.extend(title_frames)
 
     # Scenes
-    for idx, scene_path in enumerate(scene_files):
-        kb = kb_directions[idx % len(kb_directions)]
-        print(f"  Кадр {idx+1}/{len(scene_files)}: {os.path.basename(scene_path)} ({kb})")
+    for idx, (num, scene_path, scene_type) in enumerate(scene_assets):
+        basename = os.path.basename(scene_path)
 
-        scene_frames, fade_n = make_scene_frames(
-            scene_path,
-            duration_sec=scene_duration,
-            kb_direction=kb
-        )
+        if scene_type == "video":
+            print(f"  Кадр {idx+1}/{len(scene_assets)}: {basename} (видеоклип)")
+            scene_frames, fade_n = make_video_scene_frames(scene_path)
+        else:
+            kb = kb_directions[idx % len(kb_directions)]
+            print(f"  Кадр {idx+1}/{len(scene_assets)}: {basename} ({kb})")
+            scene_frames, fade_n = make_scene_frames(
+                scene_path,
+                duration_sec=scene_duration,
+                kb_direction=kb
+            )
 
         # Crossfade with previous
         if all_frames and fade_n > 0:
@@ -402,7 +478,8 @@ if __name__ == "__main__":
         print("Использование: python3 scripts/assemble.py S01E01")
         print("")
         print("Структура:")
-        print("  assets/scenes/S01E01/  ← картинки (01.png, 02.png, ...)")
+        print("  assets/scenes/S01E01/  ← видео (01.mp4) и/или картинки (01.png)")
+        print("                           видео приоритетнее: 01.mp4 > 01.png")
         print("  assets/voice/S01E01/   ← озвучка (01.mp3 или full.mp3)")
         print("  assets/music/bg.mp3    ← фоновая музыка")
         sys.exit(1)

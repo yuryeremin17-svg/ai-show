@@ -35,11 +35,12 @@ AI_SHOW/
 
 ## Рабочий процесс
 1. Юрий выбирает историю (из MY_STORIES.md или новую)
-2. Скилл scenario пишет раскадровку (визуал + текст + промпты для картинок)
-3. Юрий генерит картинки (Midjourney ИЛИ ChatGPT/DALL-E) → `assets/scenes/<episode>/`
-4. Озвучка (ElevenLabs API / свой голос / gTTS) → `assets/voice/<episode>/`
-5. Фоновая музыка (Suno AI / royalty-free) → `assets/music/`
-6. Сборка: `python3 scripts/assemble.py S01E01` → `episodes/S01E01.mp4`
+2. Скилл scenario пишет раскадровку (визуал + текст + промпты MIDJOURNEY + промпты IMG2VID)
+3. Юрий генерит картинки (Midjourney ИЛИ ChatGPT/DALL-E) → `assets/scenes/<episode>/01.png`
+4. **(Опционально)** Юрий оживляет картинки через Kling/Runway (img2vid) → `assets/scenes/<episode>/01.mp4`
+5. Озвучка (ElevenLabs API / свой голос / gTTS) → `assets/voice/<episode>/`
+6. Фоновая музыка (Suno AI / royalty-free) → `assets/music/`
+7. Сборка: `python3 scripts/assemble.py S01E01` → `episodes/S01E01.mp4`
 
 ## Правила контента
 - Не выдумывать истории — только реальные из MY_STORIES.md или рассказанные Юрием
@@ -52,11 +53,15 @@ AI_SHOW/
 |------|-----------|-------------|
 | Сценарий | Claude (скилл scenario) | — |
 | Картинки | Midjourney (ручной ввод) | ChatGPT / DALL-E (API → автомат) |
+| Оживление (img2vid) | Kling AI (бесплатно на тест) | Runway Gen-4 ($15-28/мес, лучшая консистентность) |
 | Голос | ElevenLabs (API, клон голоса) | gTTS (бесплатно, хуже качество) |
 | Музыка | Suno AI / Udio (свой трек) | Kevin MacLeod (royalty-free) |
-| Сборка | `scripts/assemble.py` (Python + moviepy + ffmpeg) | — |
+| Сборка | `scripts/assemble.py` v2 (Python + moviepy + ffmpeg) | — |
 
-Картинки Midjourney и DALL-E взаимозаменяемы — скрипт сборки берёт любые PNG/JPG.
+Картинки и видеоклипы взаимозаменяемы — assemble.py берёт PNG/JPG/MP4.
+Если для кадра есть .mp4 — используется видео. Если нет — картинка с Ken Burns.
+Промпты для img2vid — в раскадровке (поле IMG2VID).
+Документация Seedance 2.0 — `refs/SEEDANCE_GUIDE.md` (на будущее).
 
 ---
 
