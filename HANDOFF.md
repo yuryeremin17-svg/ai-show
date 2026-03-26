@@ -1,93 +1,85 @@
 # HANDOFF — AI_SHOW
 
-> Последнее обновление: 23 марта 2026, сессия #3
+> Последнее обновление: 26 марта 2026, сессия #4
 
 ## Статус проекта
-Пайплайн обновлён до v2: картинки **И/ИЛИ видеоклипы** + голос + музыка → MP4 через `scripts/assemble.py`.
-Добавлен шаг img2vid: Midjourney → **Kling/Runway** (оживление 5 сек) → сборка.
-S01E01 — раскадровка готова, промпты Midjourney + **img2vid промпты** для каждого кадра.
-Seedance 2.0 — документация сохранена (`refs/SEEDANCE_GUIDE.md`), модель Coming Soon.
-**Блокер:** ждём от Юрия ElevenLabs API key + 10 картинок из Midjourney + музыку из Suno.
+Пайплайн: Midjourney (картинки агентов) + реальное фото Юрия → Seedance/Dreamina (img2vid, доступен в ОАЭ) → ElevenLabs (голос) → assemble.py (сборка).
+14 персонажей с именами, мастер-образы в `assets/characters/masters/` (15 файлов).
+Юрий — реальный человек среди мультяшных агентов (визуальный контраст = главная фишка).
+S01E01 — раскадровка готова, промпты обновлены для веб-версии Midjourney.
+**Блокер:** ждём от Юрия 10 картинок из Midjourney + ElevenLabs API key + музыку из Suno.
 
-## Что сделано (всего)
-- Структура проекта: CLAUDE.md, SERIES_BIBLE.md, skills/scenario
-- Все 8 персонажей: промпты + мастер-образы (URL в PROMPTS.md)
-- Юрий: мастер-образ сгенерирован через фото (--cref), URL обновлён
-- S01E01_ru.md: полная раскадровка (10 кадров), CREF-инструкции, детальные промпты
-- Подробные описания всех 7 агентов (характер, голос, роль в сериале)
+## Что сделано (сессия 26 марта)
+- **14 персонажей** — имена утверждены, мастер-образы сгенерированы и сохранены
+- **Юрий = реальное фото** (yuri_real.jpg), не мультяшный — визуальный контраст с агентами
+- **Новые персонажи:** Нео (Скаут GitHub), Тесла (Конструкторское бюро), Фрида (Клод-Дизайн), Люк (Клод-Видео), Артур (Клод-Брокер), Стелла (Клод-Астролог)
+- **Клоды-кураторы** — вариации Клодища (водолазка+очки), 2 девушки + 2 парня
+- **Seedance 2.0** — доступен в ОАЭ через Dreamina и CapCut (веб)
+- **CapCut Video Studio** — Seedance встроен, можно генерить img2vid без отдельного инструмента
+- **Аудит всех файлов** — SERIES_BIBLE, CLAUDE.md, PROMPTS.md, PROMPTS_READY, SEEDANCE_GUIDE обновлены
 
-## Что сделано (сессия 21 марта — из AI-Design-Studio)
-- **Скрипт сборки:** `scripts/assemble.py` — принимает картинки + голос + музыку, собирает MP4
-  - Ken Burns эффекты (zoom in/out, pan left/right)
-  - Crossfade переходы между кадрами
-  - Субтитры с подсветкой ключевых слов
-  - Фоновая музыка с автолупом и снижением громкости под голос
-  - Заставка + аутро
-- **Тест-видео:** Сгенерировано YTP-видео "AI Office" (25 сек, 1080x1920) — PIL + moviepy + ffmpeg
-  - Доказана возможность программной сборки без CapCut
-  - Протестированы: глитч-эффекты, scanlines, vignette, shake, zoom, flash-переходы
-- **Стек обновлён:** CapCut заменён на Python-сборку, добавлены альтернативные источники картинок
-- **Два источника картинок:** Midjourney (ручной) и ChatGPT/DALL-E (API) — взаимозаменяемы
+## Решения (26 марта)
+- Юрий — реальное фото, агенты — Pixar-мульт (как "Кто подставил кролика Роджера")
+- Midjourney для картинок (пока), Dreamina/Seedance для img2vid
+- Dreamina также умеет генерить картинки (Seedream) — потенциальная замена Midjourney
+- Имена персонажей со "вторым дном": Нео (Matrix), Уоррен (Баффет), Шерлок, Альберт (Эйнштейн), Тесла, Фрида (Кало), Стелла (звезда), Байрон (поэт)
 
-## Решения (21 марта)
-- **CapCut больше не нужен** — сборка видео полностью программная (assemble.py)
-- **Картинки:** два источника, Midjourney и DALL-E, выбор за Юрием по ситуации
-- **ElevenLabs:** ожидает API key для интеграции голосов
-- **Музыка:** Suno AI для своих треков, Kevin MacLeod (incompetech.com) как fallback
-- **Зависимости:** moviepy, pillow, numpy — venv для изоляции
+## Персонажи (полный состав)
 
-## Что сделано (сессия 21 марта #2)
-- **PROMPTS_READY.md** — 10 готовых промптов для Midjourney с --cref ссылками на мастер-образы
-  - Лежит в `assets/scenes/S01E01/PROMPTS_READY.md`
-  - Юрий копирует промпт → вставляет в Discord → скачивает → 01.png...10.png
-- **Тест-видео перенесено** из AI-Design-Studio → `episodes/ai-office-ytp.mp4`
-- **План пошагового запуска** согласован с Юрием
-
-## Что сделано (сессия 23 марта)
-- **assemble.py v2** — поддержка видеоклипов (.mp4) наряду с картинками (.png)
-  - Если `01.mp4` есть — используется видео. Если нет — fallback на `01.png` (Ken Burns)
-  - Можно миксовать: часть кадров видео, часть картинки
-  - Обратная совместимость: старые серии с картинками работают без изменений
-- **img2vid промпты** добавлены ко всем 10 кадрам S01E01 (поле IMG2VID в раскадровке)
-- **Seedance 2.0** — полная документация сохранена в `refs/SEEDANCE_GUIDE.md`
-- **Исследование img2vid** — Kling (бесплатно, 66 кредитов/день) vs Runway ($15-28/мес)
-- **Исследование пайплайнов** — сохранено в `refs/VIDEO_PIPELINE_RESEARCH_2026.md`
-
-## Решения (23 марта)
-- **Seedance 2.0 недоступен** (Coming Soon на всех международных платформах)
-- **Пайплайн B "Hybrid Motion"** — Midjourney (картинки) → Kling/Runway (img2vid) → ElevenLabs → assemble.py
-- **Kling для тестов** (бесплатно), **Runway для продакшена** (консистентность персонажей)
-- **CapCut Video Studio** — Sora 2, Veo 3 Fast доступны, но дорогие (2000+ кредитов за 12 сек)
+| # | Имя | Роль | Файл |
+|---|-----|------|------|
+| 1 | Юрий | Босс (реальное фото) | yuri_real.jpg |
+| 2 | Клодище | Зам | claude.png |
+| 3 | Today | Брифинг | today.png |
+| 4 | Алекс | Скаут AI | scout_ai.png |
+| 5 | Уоррен | Скаут Biz | scout_biz.png |
+| 6 | Нео | Скаут GitHub | scout_github.png |
+| 7 | Байрон | Контент | content.png |
+| 8 | Шерлок | QA | qa.png |
+| 9 | Альберт | Аналитик | analyst.png |
+| 10 | Тесла | Конструкторское бюро | design_bureau.png |
+| 11 | Фрида | Клод-Дизайн (она) | claude_design.png |
+| 12 | Люк | Клод-Видео (он) | claude_video.png |
+| 13 | Артур | Клод-Брокер (он) | claude_broker.png |
+| 14 | Стелла | Клод-Астролог (она) | claude_astro.png |
 
 ## Что дальше
 
 ### Срочное (от Юрия)
-1. **ElevenLabs API key** (elevenlabs.io → Settings → API Keys)
-2. **10 картинок** из Midjourney по промптам из PROMPTS_READY.md → `assets/scenes/S01E01/`
+1. **10 картинок** из Midjourney по промптам из PROMPTS_READY.md → `assets/scenes/S01E01/`
+2. **ElevenLabs API key** (elevenlabs.io → Settings → API Keys)
 3. **Музыка** из Suno AI → `assets/music/bg.mp3`
-4. **Тест img2vid**: загрузить 2-3 картинки на klingai.com → оценить качество
+4. **Тест img2vid**: загрузить 2-3 картинки в Dreamina → Seedance → оценить качество
 
 ### После получения ассетов (Claude делает сам)
 5. Подключить ElevenLabs → сгенерировать озвучку → `assets/voice/S01E01/full.mp3`
 6. **Первая сборка S01E01** → `python3 scripts/assemble.py S01E01`
 
 ### Системное (после пилота)
-7. **OpenAI API key** (platform.openai.com, $5) → автогенерация картинок без Midjourney
-8. **Клон голоса Юрия** в ElevenLabs (запись 30 сек)
-9. **Голоса агентов** (Клодище, Today — разные тембры)
+7. **Клон голоса Юрия** в ElevenLabs (запись 30 сек)
+8. **Голоса агентов** (Клодище, Today — разные тембры)
+9. **Тест Dreamina/Seedream** — может ли заменить Midjourney для картинок
 10. **Скилл /episode** → одна команда = весь цикл
 
+## Ключевые файлы
+- SERIES_BIBLE.md — библия сериала (14 персонажей с именами, формат, тон)
+- assets/characters/PROMPTS.md — промпты + файлы всех 14 персонажей
+- assets/characters/masters/ — 15 мастер-образов (файлы)
+- scripts/S01E01_ru.md — раскадровка пилота (10 кадров)
+- assets/scenes/S01E01/PROMPTS_READY.md — промпты для Midjourney (веб)
+- scripts/assemble.py — сборка видео из ассетов
+- refs/SEEDANCE_GUIDE.md — справочник Seedance 2.0
+- refs/VIDEO_PIPELINE_RESEARCH_2026.md — исследование инструментов
+
 ## Технические заметки
-- moviepy 2.2.1 использует imageio_ffmpeg (встроенный ffmpeg, brew не нужен)
+- moviepy 2.2.1 использует imageio_ffmpeg (встроенный ffmpeg)
 - Python venv: `python3 -m venv .venv && source .venv/bin/activate && pip install moviepy pillow numpy`
 - assemble.py ожидает: `assets/scenes/<episode>/01.png`, `assets/voice/<episode>/full.mp3`, `assets/music/bg.mp3`
-- midjourney.com НЕ поддерживает --sref и несколько --cref одновременно
-- Discord Midjourney бот: поддерживает несколько --cref, входит в подписку
-- "character" в промптах = гендерно-нейтрально, всегда писать "man"/"woman"
-- Pixar-стиль обеспечивается словами: stylized warm illustration + Pixar-style
+- Midjourney веб-версия: midjourney.com → Imagine
+- Seedance: dreamina.capcut.com (доступен в ОАЭ, веб)
+- Pixar-стиль: `stylized warm illustration` + `Pixar-style character design`
 
-## Ключевые файлы
-- scripts/assemble.py — сборка видео из ассетов
-- scripts/S01E01_ru.md — раскадровка пилота
-- assets/characters/PROMPTS.md — промпты + URL всех 8 персонажей
-- SERIES_BIBLE.md — библия сериала (персонажи, формат, тон)
+## Предыдущие сессии
+- **Сессия 3 (23 марта):** assemble.py v2 (видеоклипы), img2vid промпты, Seedance документация, исследование пайплайнов
+- **Сессия 2 (21 марта):** assemble.py v1, PROMPTS_READY, тест-видео YTP
+- **Сессия 1 (4 марта):** структура проекта, SERIES_BIBLE, scenario скилл, 8 персонажей

@@ -1,8 +1,7 @@
 # Seedance 2.0 — Справочник для AI_SHOW
 
-> Статус: Coming Soon на международных платформах (март 2026)
-> Документация сохранена для будущего использования.
-> Обновлено: 23 марта 2026
+> Статус: Доступен в ОАЭ через Dreamina (dreamina.capcut.com) и CapCut (веб-версия)
+> Обновлено: 26 марта 2026
 
 ## Формула промптов
 
@@ -77,15 +76,15 @@ Clear facial features, stable face, no distortion, no deformation. Normal body p
 
 | Платформа | URL | Примечание |
 |-----------|-----|-----------|
-| Dreamina (CapCut) | dreamina.capcut.com | Coming Soon (март 2026) |
-| fal.ai | fal.ai/seedance-2.0 | Coming Soon |
-| CapCut Desktop | capcut.com | Video 3.5 Pro доступен, Seedance 2.0 нет |
+| Dreamina | dreamina.capcut.com | Доступен в ОАЭ (веб) |
+| CapCut | capcut.com | Доступен в ОАЭ (веб) |
+| fal.ai | fal.ai/seedance-2.0 | API |
 
 ## Связь с пайплайном AI_SHOW
 
 ```
-ТЕКУЩИЙ:  scenario → Midjourney (картинки) → Kling/Runway (img2vid) → ElevenLabs → assemble.py
-БУДУЩИЙ:  scenario → Seedance (видеоклипы 5-15 сек напрямую) → ElevenLabs → assemble.py
+ТЕКУЩИЙ:  scenario → Midjourney (картинки) → Seedance/Dreamina (img2vid) → ElevenLabs → assemble.py
+АЛЬТ:     scenario → Dreamina (картинки + видео в одном) → ElevenLabs → assemble.py
 ```
 
 ---

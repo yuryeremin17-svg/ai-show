@@ -2,7 +2,7 @@
 
 ## Что это
 Видеосериал "AI Office" — анимированные истории о том, как топ-менеджер строит офис из AI-агентов.
-Формат: стилизованный аватар + сменяющиеся иллюстрации + озвучка.
+Формат: реальный Юрий + мультяшные AI-агенты (Pixar-стиль) + озвучка.
 Юмор, самоирония, практическая ценность.
 
 ## Языки
@@ -52,8 +52,9 @@ AI_SHOW/
 | Этап | Инструмент | Альтернатива |
 |------|-----------|-------------|
 | Сценарий | Claude (скилл scenario) | — |
-| Картинки | Midjourney (ручной ввод) | ChatGPT / DALL-E (API → автомат) |
-| Оживление (img2vid) | Kling AI (бесплатно на тест) | Runway Gen-4 ($15-28/мес, лучшая консистентность) |
+| Картинки агентов | Midjourney (веб-версия) | Dreamina / Seedream |
+| Юрий в кадре | Реальное фото (masters/yuri_real.jpg) | — |
+| Оживление (img2vid) | Seedance 2.0 через Dreamina / CapCut (доступно в ОАЭ) | Kling AI |
 | Голос | ElevenLabs (API, клон голоса) | gTTS (бесплатно, хуже качество) |
 | Музыка | Suno AI / Udio (свой трек) | Kevin MacLeod (royalty-free) |
 | Сборка | `scripts/assemble.py` v2 (Python + moviepy + ffmpeg) | — |
@@ -61,7 +62,8 @@ AI_SHOW/
 Картинки и видеоклипы взаимозаменяемы — assemble.py берёт PNG/JPG/MP4.
 Если для кадра есть .mp4 — используется видео. Если нет — картинка с Ken Burns.
 Промпты для img2vid — в раскадровке (поле IMG2VID).
-Документация Seedance 2.0 — `refs/SEEDANCE_GUIDE.md` (на будущее).
+Документация Seedance 2.0 — `refs/SEEDANCE_GUIDE.md`.
+14 персонажей с именами — см. `SERIES_BIBLE.md` и `assets/characters/PROMPTS.md`.
 
 ---
 
