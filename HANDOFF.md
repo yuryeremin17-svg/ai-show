@@ -1,63 +1,19 @@
 # HANDOFF — AI_SHOW
 
-> Последнее обновление: 28 марта 2026, сессия #6
+> Последнее обновление: 28 марта 2026, сессия #7
 
 ## Статус проекта
 Концепция **"Два мира"** принята. Юрий = реальное видео, агенты = мультик Pixar. Миры не пересекаются. Переходы = Seedance-клипы.
 Пайплайн: voice-first (голоса → аниматик → картинки → сборка). 9 ролей в PIPELINE.md.
 14 персонажей, мастер-образы готовы (14/14 PNG в masters/).
 **/scenario v2.7** — 6 подролей с полными инструкциями. 10 справочников в refs/.
-S01E01 "Обратитесь к дизайнеру" пересобран (станет E02). Нужен пилот — знакомство с офисом.
+**Шаг 1б ВЫПОЛНЕН** — 4 скрипта пайплайна + config написаны, протестированы, аудит пройден (2 прохода).
 
 ---
 
 ## ПЛАН НА СЛЕДУЮЩУЮ СЕССИЮ
 
-### ШАГ 1: ✅ ВЫПОЛНЕН (сессия 28 марта)
-
-Все 6 подролей сценариста написаны в `skills/scenario/SKILL.md` (v2.7, 911 строк).
-12/12 чекбоксов из предыдущего плана закрыты.
-
-### ШАГ 1б: Написать скрипты пайплайна
-
-Сейчас скрипты — только описания. Нужно написать код:
-
-**`voice_gen.py`** — генерация голосов:
-```
-Вход:  scripts/S01EXX_ru.md (секции "Текст озвучки")
-Выход: assets/voice/S01EXX/yuri_01.mp3, claude_02.mp3, ...
-       assets/voice/S01EXX/timing.json (длительность каждого файла)
-API:   ElevenLabs (нужен ключ)
-Голоса: Юрий = клон, агенты = библиотека ElevenLabs
-Фильтры: Telegram-голосовое = ffmpeg bandpass filter
-Справочник: refs/ELEVENLABS_VOICE_GUIDE.md (профили, settings, batch workflow)
-```
-
-**`animatic.py`** — грубый черновик:
-```
-Вход:  timing.json + голоса + placeholder-картинки (цветные плашки с текстом)
-Выход: episodes/S01EXX_animatic.mp4
-Зачем: проверить ритм ДО генерации в Midjourney
-```
-
-**`audio_mix.py`** — аудио-микс:
-```
-Вход:  голоса (mp3) + музыка (bg.mp3) + SFX (telegram.mp3, swoosh.mp3)
-Выход: assets/voice/S01EXX/mix.mp3 (один файл, все слои)
-Уровни: голос -6dBFS, музыка -18dB под голосом, SFX -12dB, мастер -14 LUFS
-Справочник: refs/VOICE_DIRECTION_GUIDE.md (mixing standards)
-```
-
-**`assemble.py` v3** — финальная сборка:
-```
-Вход:  видеоклипы (shot01.mp4, ...) + аудио-микс (mix.mp3)
-Выход: episodes/S01EXX.mp4
-Новое: поддержка реального видео + мульт в одном потоке
-       субтитры из .srt файла
-       dissolve переходы
-```
-
-### ШАГ 2: Сценарист набрасывает 3-5 идей серий
+### ШАГ 2: 3-5 идей серий
 
 **Спросить Юрия:** что хочет рассказать? Какие темы?
 
@@ -69,78 +25,65 @@ API:   ElevenLabs (нужен ключ)
 
 Сценарист должен предложить **ИДЕИ** (логлайн + инсайт), не полные сценарии. Юрий выберет.
 
-### ШАГ 3: API ключ ElevenLabs
+### ШАГ 3: ✅ ВЫПОЛНЕН (сессия 28 марта)
 
-Без ключа голоса не генерируются. Юрий: elevenlabs.io → Profile → API Key.
+API ключ ElevenLabs получен, сохранён в `.env`, протестирован — работает (22 голоса, SDK ok на Python 3.14).
 
-### ШАГ 4: Создать аудио-набор сезона
+### Следующие шаги после выбора серий:
 
-6 музыкальных файлов (Suno AI):
-- theme_jingle.mp3 (3-5 сек, интро)
-- outro_melody.mp3 (3-5 сек, финал)
-- bed_chill.mp3 (90 сек, lo-fi для рабочих сцен)
-- bed_tension.mp3 (90 сек, нарастание)
-- insight_sting.mp3 (3 сек, aha-момент)
-- comedy_sting.mp3 (2 сек, для гэгов)
-
-10 SFX (Freesound.org / Pixabay):
-- swoosh × 2, telegram notification, pop, portal_to_ai, portal_to_real, keyboard, record_scratch, sparkle, sad_trombone
+1. **Выбрать голоса** из библиотеки ElevenLabs → прописать voice_id в config.py
+2. **Клон голоса Юрия** (Instant Voice Clone, 1-2 мин записи)
+3. **Аудио-набор сезона** (Suno 6 треков + SFX 10 звуков) → `assets/music/`, `assets/sfx/`
+4. **Сценарий пилота** → `/scenario` → S01E01_ru.md
+5. **Полный прогон пайплайна** на пилоте
 
 ---
 
-## Что сделано (сессия 28 марта)
+## Что сделано (сессия 28 марта, #7)
 
-- **/scenario v2.7** — 6 подролей с полными инструкциями (911 строк):
-  1. Сценарист — Story Spine + ABT + таблица хуков + voice-first + факт-чек + образец S01E01
-  2. Раскадровщик — 5-beat sheet + 5 правил шотсайзов + шаблон шота (ШОТСАЙЗ, ЗВУК, СУБТИТРЫ, РИТМ, MOOD)
-  3. Промпт-инженер — формула MJ (prefix/suffix) + формула Seedance (constraint block) + запрещённые слова
-  4. Voice & Audio Director — голосовые паспорта 5 персонажей + аудио-карта + Telegram FFmpeg-команда + уровни микширования
-  5. Режиссёр съёмки — чеклист перед съёмкой + карточка шота + правила перформанса + continuity
-  6. Арт-директор — священные коровы + палитры двух миров + 5-секундный drift check + правило 3 попыток
+- **5 скриптов пайплайна:**
+  - `scripts/config.py` (188 строк) — VOICE_PROFILES 8 персонажей, LEVELS, DUCKING, хелперы
+  - `scripts/voice_gen.py` (630 строк) — парсер 2 форматов раскадровки, ElevenLabs генерация, timing.json + SRT + manifest.json
+  - `scripts/animatic.py` (287 строк) — цветные плашки + голоса → черновое видео для проверки ритма
+  - `scripts/audio_mix.py` (375 строк) — ffmpeg ducking по таймингам, 3 слоя (голос/музыка/SFX), LUFS нормализация
+  - `scripts/assemble.py` v3 (490 строк) — moviepy clip composition, SRT burn-in, CrossFade dissolve, mix.mp3
 
-- **10 справочников в refs/** (суммарно ~4500 строк):
-  - SCREENWRITING_FRAMEWORKS.md — Pixar Story Spine, Dan Harmon, ABT, Micro Drama
-  - SCREENWRITING_RESEARCH.md — Kurzgesagt, TED-Ed, Смешарики, Reels, Explainer
-  - SHOT_PLANNING_GUIDE.md — типы шотов, ASL данные, beat sheet, 9:16, mixed media
-  - ART_DIRECTION.md — Style Bible, палитра, drift detection, anchor system, QA (19 разделов)
-  - MIDJOURNEY_PROMPT_GUIDE.md — формула, style lock, --oref, шаблоны, словарь
-  - IMG2VID_PROMPT_GUIDE.md — Seedance/Kling/Runway, движения, камера, constraints
-  - VOICE_DIRECTION_GUIDE.md — голосовые паспорта, система PACE, mixing, SFX
-  - ELEVENLABS_VOICE_GUIDE.md — API settings, профили, batch workflow, клон Юрия
-  - FILMING_GUIDE.md — чеклист съёмки, кадрирование 9:16, свет Дубай, перформанс
-  - LIVE_ACTION_DIRECTION_GUIDE.md — continuity, переходы, цвет, mixed media
+- **API ключ ElevenLabs** — получен, сохранён в .env, протестирован
+- **.gitignore** — добавлены .env, __pycache__
+- **assemble_v2.py** — архив предыдущей версии
 
-- **Верификация расширена** до ~55 пунктов (было 9)
-- **--cref → --oref** (Midjourney V7)
-- **MOOD** поле добавлено в шаблон шота
+- **Аудит плана (до реализации):** 7 проблем найдено и исправлено в плане
+- **Аудит кода (после реализации):** 6 проблем найдено, 5 исправлено, 1 отложена (ЗВУК: v2.7)
+- **Проверка рисков (live):** moviepy CrossFade ✅, ffmpeg ducking ✅, gTTS ✅, ElevenLabs SDK ✅
 
-## Решения (28 марта)
+## Решения (28 марта, сессия 7)
 
-- Подход к подролям: Kurzgesagt-гибрид (глубина + ритм Reels + визуальные метафоры + факт-чек)
-- Каждая подроль исследована (3 варианта из индустрии → выбран лучший для нашего формата)
-- MJ: оставаться на V6.1 для Pixar-стиля (V7 --oref для персонажей)
-- Seedance = основной инструмент img2vid, Kling = запасной, Runway = для реал-кадров Юрия
-- Музыка: создание ТЗ в сценарии, генерация Suno — отдельный шаг
+- VOICE_DIRECTION_GUIDE.md = авторитетный источник голосовых профилей (не ELEVENLABS_VOICE_GUIDE.md)
+- parse_time_range() в config.py (общая для всех скриптов)
+- Request stitching убран — SDK convert() не возвращает request_id
+- SRT тайминг: offset title card 2.5с вычитается в assemble.py
+- pydub не используется (сломан на Python 3.14) → всё через ffmpeg subprocess
 
 ## Блокеры
 
 | Блокер | Что блокирует | Как решить |
 |--------|---------------|------------|
-| API ключ ElevenLabs | Голоса → аниматик → всё | Юрий даёт ключ |
-| Скрипты не написаны | Автоматизация пайплайна | ШАГ 1б |
+| voice_id не заданы | Генерация голосов | Выбрать из библиотеки ElevenLabs |
+| Клон голоса Юрия | Голос Юрия в сериях | IVC: 1-2 мин записи → ElevenLabs |
+| Аудио-набор не создан | Музыка и SFX | Suno + Freesound |
 | Клипы Юрия не сняты | Реальное видео | По инструкции из refs/FILMING_GUIDE.md |
-| Аудио-набор не создан | Музыка и SFX для серий | ШАГ 4 (Suno + Freesound) |
-| Anchor-файлы не созданы | Style lock для генерации | При первой генерации кадров |
 
 ## Ключевые файлы
 
-- **skills/scenario/SKILL.md** — скилл-сценарист v2.7 (911 строк, 6 подролей)
+- **scripts/config.py** — единый конфиг, VOICE_PROFILES, LEVELS, хелперы
+- **scripts/voice_gen.py** — парсер + генерация голосов + timing.json + SRT
+- **scripts/animatic.py** — аниматик из timing.json + голосов
+- **scripts/audio_mix.py** — микширование голос + музыка + SFX → mix.mp3
+- **scripts/assemble.py** — финальная сборка v3
+- **skills/scenario/SKILL.md** — скилл-сценарист v2.7 (6 подролей)
 - SERIES_BIBLE.md — библия сериала (14 персонажей, формат 60 сек, два мира)
 - scripts/PIPELINE.md — 9 ролей, voice-first конвейер
-- scripts/S01E01_ru.md — раскадровка v2 (60 сек, два мира)
-- scripts/S01E01_PRODUCTION.md — продакшн-план
-- assets/characters/PROMPTS.md — промпты 14 персонажей
-- **refs/** — 10 справочников (см. выше)
+- **refs/** — 10 справочников
 
 ## Персонажи (полный состав)
 
@@ -162,6 +105,7 @@ API:   ElevenLabs (нужен ключ)
 | 14 | Стелла | Клод-Астролог (она) | claude_astro.png |
 
 ## Предыдущие сессии
+- **Сессия 7 (28 марта):** Шаг 1б — 5 скриптов пайплайна, API ключ ElevenLabs, 2 аудита
 - **Сессия 6 (28 марта):** /scenario v2.7, 6 подролей готовы, 10 справочников, 6001 строк
 - **Сессия 5 (27 марта):** Концепция "Два мира", PIPELINE, /scenario v2.0, S01E01 пересобран
 - **Сессия 4 (26 марта):** 14 персонажей с именами, Seedance доступен в ОАЭ
