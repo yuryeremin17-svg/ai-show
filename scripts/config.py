@@ -31,19 +31,19 @@ OUTPUT_FORMAT = "mp3_44100_128"
 # voice_id: None = не настроен, нужно выбрать из библиотеки
 VOICE_PROFILES = {
     "ЮРИЙ": {
-        "voice_id": None,
+        "voice_id": "IIKFPiMReo9YmycfbMxL",  # my Dubai Agent Voice (cloned)
         "stability": 0.60, "similarity_boost": 0.85,
         "style": 0.20, "speed": 0.95,
         "speaker_boost": True,
     },
     "ЮРИЙ_TG": {
-        "voice_id": None,  # тот же voice_id что ЮРИЙ
+        "voice_id": "IIKFPiMReo9YmycfbMxL",  # тот же клон что ЮРИЙ
         "stability": 0.55, "similarity_boost": 0.80,
         "style": 0.15, "speed": 1.05,
         "speaker_boost": True,
     },
     "КЛОДИЩЕ": {
-        "voice_id": None,
+        "voice_id": "cjVigY5qzO86Huf0OWal",  # Eric - Smooth, Trustworthy
         "stability": 0.50, "similarity_boost": 0.75,
         "style": 0.30, "speed": 0.92,
         "speaker_boost": False,
