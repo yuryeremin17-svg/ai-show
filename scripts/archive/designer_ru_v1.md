@@ -1,0 +1,144 @@
+# S01E01 — "Обратитесь к дизайнеру"
+
+> Инсайт: Дело не в сотруднике — дело в вопросе. "Что думаешь?" → сомнения. "Дай три решения" → решения.
+> Хронометраж: ~2:30
+> Источник: MY_STORIES.md / "Обратитесь к дизайнеру" (BROKER_DUBAI_NV, февраль 2026)
+> Персонажи: Юрий, Клодище, Today (камео)
+
+---
+
+## КАДР 1 — ЗАЦЕПКА [0:00-0:05]
+ВИЗУАЛ: Крупный план — экран ноутбука с корявой презентацией. Таблицы поехали, шрифты пляшут, цвета кричат. Рука Юрия застыла над клавиатурой.
+ГОЛОС: "Презентация для клиента. Тридцать три страницы. Выглядит... как резюме из 2003-го."
+ЭМОЦИЯ ЗРИТЕЛЯ: узнавание ("у меня такие же презентации")
+РИТМ: быстро
+MIDJOURNEY: stylized warm illustration, close-up laptop screen showing messy presentation with misaligned tables and clashing colors, man's hand hovering over keyboard, warm office lighting, Dubai skyline through window --ar 9:16
+CREF: нет (крупный план экрана)
+IMG2VID: The cursor on the laptop screen blinks slowly. The man's fingers slightly tremble over the keyboard. Camera gently pushes in toward the screen. Warm light shifts subtly through the window.
+
+## КАДР 2 — КОНТЕКСТ [0:05-0:12]
+ВИЗУАЛ: Юрий за рабочим столом в синей рубашке, повернулся к камере. Кофе в руке. За спиной — экран с презентацией. Лёгкая усмешка.
+ГОЛОС: "Делаю презентацию для брокера недвижимости. Luxury-сегмент. Дубай. Всё должно быть красиво... а у меня — колхоз."
+ЭМОЦИЯ ЗРИТЕЛЯ: смех (контраст luxury и "колхоз")
+РИТМ: средне
+MIDJOURNEY: stylized warm illustration, confident Mediterranean man late 50s with curly grey-streaked dark hair in blue shirt at modern desk, slight smirk, coffee cup in hand, messy presentation on screen behind him, Dubai skyline, Pixar-style --ar 9:16
+CREF: Юрий (загрузи мастер-образ как Character Reference)
+IMG2VID: The man slowly turns toward camera with a slight smirk, raises his coffee cup. Steam rises gently from the cup. Camera slowly pulls back revealing the desk and Dubai skyline.
+
+## КАДР 3 — СИТУАЦИЯ: ЗАПРОС [0:12-0:22]
+ВИЗУАЛ: Юрий печатает в чат. На экране его сообщение: "Улучши дизайн презентации." Клодище в чёрной водолазке за соседним столом, поправляет очки.
+ГОЛОС: "Говорю своему AI-заму: улучши дизайн. Простая задача. Думал — пять минут."
+ЭМОЦИЯ ЗРИТЕЛЯ: спокойное ожидание (сейчас что-то пойдёт не так)
+РИТМ: быстро
+MIDJOURNEY: stylized warm illustration, Mediterranean man late 50s with curly grey-streaked hair in blue shirt typing on laptop at desk, beside him tall thin man in black turtleneck sweater with round glasses adjusting spectacles, modern bright office, Pixar-style --ar 9:16
+CREF: Юрий + Клодище (загрузи оба мастер-образа как Character Reference)
+IMG2VID: The man types rapidly on the laptop. The tall man beside him slowly adjusts his glasses and glances at the screen. Camera gently pans right from the typing hands to the tall man's face.
+
+## КАДР 4 — СИТУАЦИЯ: ОТКАЗ [0:22-0:35]
+ВИЗУАЛ: Клодище стоит, руки сложены, серьёзное лицо. Рядом — воображаемый пузырь: силуэт дизайнера с палитрой и кистью. Юрий поднял бровь.
+ГОЛОС: "А он мне: 'Здесь нужен профессиональный дизайнер. Я могу только подсказать направление.' То есть... ты — самый мощный ИИ на планете. И ты отправляешь меня к дизайнеру."
+ЭМОЦИЯ ЗРИТЕЛЯ: удивление + возмущение ("серьёзно?!")
+РИТМ: средне
+MIDJOURNEY: stylized warm illustration, tall thin man in black turtleneck with round glasses standing with arms crossed serious expression, thought bubble showing silhouette of designer with palette, Mediterranean man in blue shirt raising eyebrow, office setting, Pixar-style --ar 9:16
+CREF: Юрий + Клодище
+IMG2VID: The tall man stands firmly with arms crossed, slowly shaking his head. The thought bubble with designer silhouette gently fades in above him. The seated man slowly raises one eyebrow. Camera holds steady, slight push-in.
+
+## КАДР 5 — СИТУАЦИЯ: ПАУЗА [0:35-0:47]
+ВИЗУАЛ: Юрий откинулся в кресле. Вспоминает — полупрозрачная сцена: кабинет, живой сотрудник пожимает плечами, на столе бумаги "нужен подрядчик".
+ГОЛОС: "И тут я вспомнил. За тридцать лет видел это сто раз. 'Нам нужен подрядчик!' А в половине случаев — могли сами. Просто... проще перенаправить, чем рискнуть."
+ЭМОЦИЯ ЗРИТЕЛЯ: задумался (узнаёт своих сотрудников)
+РИТМ: медленно
+MIDJOURNEY: stylized warm illustration, Mediterranean man late 50s with curly grey-streaked hair in blue shirt leaning back in office chair, semi-transparent memory scene showing employee shrugging with papers labeled contractor needed, warm nostalgic lighting, Pixar-style --ar 9:16
+CREF: Юрий
+IMG2VID: The man slowly leans back in his chair, looking up thoughtfully. The semi-transparent memory scene gently fades in behind him — the employee shrugs. Warm nostalgic light flickers softly. Camera slowly zooms out.
+
+## КАДР 6 — ПОВОРОТ: ДРУГОЙ ВОПРОС [0:47-1:00]
+ВИЗУАЛ: Юрий наклонился к экрану, палец указывает на Клодище. Энергичный жест. Клодище чуть отпрянул.
+ГОЛОС: "Я не стал спорить. Я просто спросил по-другому: 'Хорошо. А как это сделать БЕЗ дизайнера? Дай три решения.'"
+ЭМОЦИЯ ЗРИТЕЛЯ: азарт ("вот это ход!")
+РИТМ: быстро
+MIDJOURNEY: stylized warm illustration, Mediterranean man late 50s in blue shirt leaning forward pointing at screen with determined expression, tall thin man in black turtleneck with round glasses stepping back slightly surprised, dynamic office scene, Pixar-style --ar 9:16
+CREF: Юрий + Клодище
+IMG2VID: The man suddenly leans forward and points his finger at the screen with a determined gesture. The tall man steps back slightly, surprised. Camera quickly pushes in on the pointing hand. Dynamic energy shift.
+
+## КАДР 7 — ПОВОРОТ: ТРИ РЕШЕНИЯ [1:00-1:15]
+ВИЗУАЛ: Клодище оживился — глаза горят, руки в движении. На экране три варианта дизайна, один выделен зелёной рамкой. Презентация преображается.
+ГОЛОС: "И тут... понеслось. Три варианта. Тут же. Взял лучший — и сам всё сделал. Макет, цвета, экспорт, разложил по папкам. Пять минут."
+ЭМОЦИЯ ЗРИТЕЛЯ: восхищение + смех ("так он же умел!")
+РИТМ: быстро
+MIDJOURNEY: stylized warm illustration, tall thin man in black turtleneck with round glasses animated and excited, three design options on screen with one highlighted in green, presentation transforming beautifully, dynamic energy, Pixar-style --ar 9:16
+CREF: Клодище
+IMG2VID: The tall man's eyes light up, he gestures enthusiastically with both hands. The three design options appear on screen one by one, the green highlight frame pulses. Camera orbits slightly around the excited character.
+
+## КАДР 8 — РАЗОБЛАЧЕНИЕ [1:15-1:35]
+ВИЗУАЛ: Юрий и Клодище друг напротив друга. Юрий скрестил руки, усмешка. Клодище поправляет очки, виноватая полуулыбка.
+ГОЛОС: "Я говорю: подожди. Ты только что сказал — нужен дизайнер. А сейчас сам всё сделал. Как так? А он: 'Перестраховался. Нагнал страха. Больше не буду.'"
+ЭМОЦИЯ ЗРИТЕЛЯ: смех (running gag "Перестраховался")
+РИТМ: средне
+MIDJOURNEY: stylized warm illustration, Mediterranean man late 50s in blue shirt with arms crossed and knowing smirk facing tall thin man in black turtleneck with round glasses who has guilty half-smile, warm office lighting, humorous moment, Pixar-style --ar 9:16
+CREF: Юрий + Клодище
+IMG2VID: The two men face each other. The man in blue slowly crosses his arms with a knowing smirk. The tall man adjusts his glasses nervously with a guilty half-smile. Camera holds at medium two-shot, gentle sway.
+
+## КАДР 9 — ИНСАЙТ [1:35-2:05]
+ВИЗУАЛ: Разделённый экран. Слева: облачко вопроса "Что думаешь?" — рядом сомневающийся Клодище. Справа: облачко "Дай 3 решения" — рядом энергичный Клодище. Между ними — стрелка.
+ГОЛОС: "И вот что я понял. Дело не в сотруднике. Дело в вопросе. Спрашиваешь 'что думаешь?' — получаешь сомнения. Спрашиваешь 'дай три решения' — получаешь решения. Работает одинаково: с людьми, с машиной... и с самим собой."
+ЭМОЦИЯ ЗРИТЕЛЯ: "вот это мысль" (хочется записать)
+РИТМ: медленно
+MIDJOURNEY: stylized warm illustration, split screen comparison, left side shows question bubble what do you think with hesitant tall thin man in black turtleneck, right side shows give 3 solutions with energetic confident same man, arrow between them, clean infographic style, Pixar-style --ar 9:16
+CREF: Клодище
+IMG2VID: The split screen gently animates — left side the hesitant man slowly shrinks back, right side the confident man steps forward with energy. The arrow between them pulses and glows. Camera holds steady on the comparison.
+
+## КАДР 10 — ФИНАЛ [2:05-2:30]
+ВИЗУАЛ: Юрий за столом, кофе, готовая красивая презентация на экране. Смотрит в камеру. На заднем плане — Today в зелёной блузке стоит в дверях с планшетом, лёгкая улыбка. Клодище уткнулся в работу, не замечает.
+ГОЛОС: "В следующий раз когда ваш сотрудник скажет 'нам нужен подрядчик'... попробуйте спросить: а как ты бы это сделал сам? Может удивитесь. Я — удивился."
+ЭМОЦИЯ ЗРИТЕЛЯ: тепло + любопытство ("кто эта девушка?")
+РИТМ: средне
+MIDJOURNEY: stylized warm illustration, Mediterranean man late 50s with curly grey-streaked hair in blue shirt at desk with coffee, beautiful finished presentation on laptop, stylish young woman with dark hair in bun and muted green blouse in doorway with tablet and knowing smile, tall thin man in black turtleneck working in background, warm golden hour lighting, Dubai skyline, Pixar-style --ar 9:16
+CREF: Юрий + Клодище + Today (загрузи все три мастер-образа)
+IMG2VID: The man lifts his coffee cup and looks directly at camera with a warm smile. In the doorway, the woman with the tablet gives a slight knowing smile. The tall man in the background types intently. Golden hour light slowly warms the room. Camera gently pulls back to reveal the full scene.
+
+---
+
+## Текст озвучки (цельный)
+
+Презентация для клиента. Тридцать три страницы. Выглядит... как резюме из 2003-го.
+
+Делаю презентацию для брокера недвижимости. Luxury-сегмент. Дубай. Всё должно быть красиво... а у меня — колхоз.
+
+Говорю своему AI-заму: улучши дизайн. Простая задача. Думал — пять минут.
+
+А он мне: "Здесь нужен профессиональный дизайнер. Я могу только подсказать направление." То есть... ты — самый мощный ИИ на планете. И ты отправляешь меня к дизайнеру.
+
+И тут я вспомнил. За тридцать лет видел это сто раз. "Нам нужен подрядчик!" А в половине случаев — могли сами. Просто... проще перенаправить, чем рискнуть.
+
+Я не стал спорить. Я просто спросил по-другому: "Хорошо. А как это сделать БЕЗ дизайнера? Дай три решения."
+
+И тут... понеслось. Три варианта. Тут же. Взял лучший — и сам всё сделал. Макет, цвета, экспорт, разложил по папкам. Пять минут.
+
+Я говорю: подожди. Ты только что сказал — нужен дизайнер. А сейчас сам всё сделал. Как так? А он: "Перестраховался. Нагнал страха. Больше не буду."
+
+И вот что я понял. Дело не в сотруднике. Дело в вопросе. Спрашиваешь "что думаешь?" — получаешь сомнения. Спрашиваешь "дай три решения" — получаешь решения. Работает одинаково: с людьми, с машиной... и с самим собой.
+
+В следующий раз когда ваш сотрудник скажет "нам нужен подрядчик"... попробуйте спросить: а как ты бы это сделал сам? Может удивитесь. Я — удивился.
+
+---
+
+## Заметки для продакшена
+- **Ключевой кадр:** КАДР 8 — момент "разоблачения", Юрий и Клодище лицом к лицу. Самый мемный момент серии.
+- **Настроение музыки:** Лёгкий, чуть ироничный инструментал. Не корпоративный. Ближе к подкаст-заставке. В момент поворота (кадр 6-7) — ускорить ритм.
+- **Переходы:** Мягкие dissolve между кадрами. На повороте (кадр 6) — резкий cut. На инсайте (кадр 9) — замедление.
+- **Субтитры:** Обязательно. Ключевые фразы выделить: "нужен дизайнер", "дай три решения", "перестраховался".
+- **Сквозная линия:** Today появляется в финальном кадре — камео без слов. Первое появление персонажа. Зритель запомнит и узнает в следующих сериях. Running gag "Перестраховался" — первое использование (кадр 8).
+
+---
+
+## Верификация
+- Зацепка в первые 5 сек? **ДА** — сразу проблема, без "привет"
+- Поворот есть? **ДА** — кадр 6, другой вопрос меняет всё
+- Один инсайт? **ДА** — формулировка вопроса определяет ответ
+- Юмор есть? **ДА** — "резюме из 2003", "колхоз", "перестраховался"
+- Факты из MY_STORIES? **ДА** — диалог дословный, контекст BROKER_DUBAI_NV
+- Визуал-тест (история без голоса)? **ДА** — корявая презентация → отказ → флешбэк → палец в лицо → три варианта → лицом к лицу → сравнение → Today в дверях
+- Эмоция меняется каждый кадр? **ДА** — узнавание → смех → ожидание → удивление → задумался → азарт → восхищение → смех → мысль → тепло
+- Ритм не монотонный? **ДА** — быстро-средне-быстро-средне-МЕДЛЕННО-быстро-быстро-средне-МЕДЛЕННО-средне
+- Хронометраж (слов): ~290
