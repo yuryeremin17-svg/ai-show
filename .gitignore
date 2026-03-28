@@ -17,6 +17,10 @@ assets/scenes/**/*.jpg
 # Референсы персонажей хранить (лёгкие, нужны для --cref)
 # assets/characters/ — НЕ игнорируем
 
+# Секреты
+.env
+
 # Системные
 .DS_Store
 *.tmp
+__pycache__/
