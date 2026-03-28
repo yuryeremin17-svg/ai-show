@@ -31,6 +31,7 @@ AI_SHOW/
 │   └── scenario/        ← скилл-сценарист (SKILL.md + run.sh)
 ├── episodes/            ← готовые видео (НЕ в git, .gitignore)
 └── refs/                ← референсы стиля, примеры, вдохновение
+    └── ART_DIRECTION.md ← арт-дирекция: палитра, свет, style lock, запреты
 ```
 
 ## Рабочий процесс
@@ -64,6 +65,7 @@ AI_SHOW/
 Промпты для img2vid — в раскадровке (поле IMG2VID).
 Документация Seedance 2.0 — `refs/SEEDANCE_GUIDE.md`.
 14 персонажей с именами — см. `SERIES_BIBLE.md` и `assets/characters/PROMPTS.md`.
+Арт-дирекция (палитра, свет, style lock, запрещённые элементы) — `refs/ART_DIRECTION.md`.
 
 ---
 

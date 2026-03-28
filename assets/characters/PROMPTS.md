@@ -187,4 +187,13 @@ stylized warm illustration, tall slim young woman in black turtleneck with round
 
 ---
 
-*Обновлено: 26 марта 2026*
+---
+
+## Справочник промптинга
+
+Полный гайд по структуре промптов, --cref, --sref, освещению, камере и style lock:
+**`refs/MIDJOURNEY_PROMPT_GUIDE.md`**
+
+---
+
+*Обновлено: 28 марта 2026 — добавлена ссылка на MIDJOURNEY_PROMPT_GUIDE*

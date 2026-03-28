@@ -87,5 +87,11 @@ Clear facial features, stable face, no distortion, no deformation. Normal body p
 АЛЬТ:     scenario → Dreamina (картинки + видео в одном) → ElevenLabs → assemble.py
 ```
 
+## Детальный гайд по промптам
+
+Полный справочник промптов для img2vid (формулы, словарь движений, камера, constraints,
+шаблоны для AI_SHOW, сравнение Seedance/Kling/Runway):
+→ `refs/IMG2VID_PROMPT_GUIDE.md`
+
 ---
 *Источник: 11 документов Seedance 2.0 (SYSTEM_PROMPT + модули 00-09 + community prompts)*

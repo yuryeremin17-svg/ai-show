@@ -248,7 +248,7 @@
 
 **Стиль агентов:** Стилизованные, тёплые, немного карикатурные. Не фотореализм, не аниме. Ближе к Pixar/иллюстрации детских книг для взрослых. Тёплые тона, мягкий свет.
 
-**Консистентность:** Все агенты в одном стиле (`stylized warm illustration` + `Pixar-style character design`). Мастер-образы в `assets/characters/masters/`. Midjourney `--cref` для агентов.
+**Консистентность:** Все агенты в одном стиле (`stylized warm illustration` + `Pixar-style character design`). Мастер-образы в `assets/characters/masters/`. Midjourney `--oref` (Omni Reference, V7) для агентов. Полные правила -- в `refs/ART_DIRECTION.md` (палитра, освещение, запрещённые элементы, style lock, drift detection, cross-episode continuity, QA-процесс, якорная система, color scripts).
 
 **Генерация и сборка:**
 | Этап | Инструмент |
