@@ -45,11 +45,14 @@
 
 - [ ] E1. Style prefix + suffix из ART_DIRECTION.md в каждом промпте
 - [ ] E2. --ar 9:16 для сцен (вертикальный формат)
-- [ ] E3. --oref / --cref с мастер-образами где нужен конкретный персонаж
+- [ ] E3. --oref с мастер-образами для каждого персонажа
+- [ ] E3b. **Макс 2 персонажа на MJ-промпт** (3+ = отдельные блоки MIDJOURNEY (имя))
+- [ ] E3c. MJ-промпт 20-40 слов (без prefix/suffix/параметров)
 - [ ] E4. Тёплая палитра (Amber Gold, Warm Cream, Honey)
 - [ ] E5. Dubai skyline за окном в офисных сценах
-- [ ] E6. IMG2VID промпты есть для каждого мульт-шота
-- [ ] E7. IMG2VID начинается с "@Image1 as the first frame"
+- [ ] E6. SEEDANCE промпты есть для каждого мульт-шота (1 действие на клип)
+- [ ] E7. SEEDANCE начинается с "@Image1 as the first frame"
+- [ ] E7b. SEEDANCE: time segments для клипов >10 сек
 - [ ] E8. Нет запрещённых элементов (см. ART_DIRECTION)
 
 ## F. ФАКТ-ЧЕК

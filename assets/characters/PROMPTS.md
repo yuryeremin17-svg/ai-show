@@ -29,7 +29,7 @@ stylized warm illustration, tall thin intellectual character with round glasses,
 
 ---
 
-## 3. Today — Утренний брифинг, она (цвет: приглушённый зелёный)
+## 3. Тоня (Today) — Утренний брифинг, она (цвет: приглушённый зелёный)
 
 ```
 stylized warm illustration, stylish young woman with dark hair in neat bun, thin elegant glasses, muted green silk blouse, wristwatch on wrist, holding tablet and leather folder, calm confident expression, slight knowing smile, graceful upright silhouette, morning light, Pixar-style character design --ar 1:1

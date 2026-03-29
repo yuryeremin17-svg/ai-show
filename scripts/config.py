@@ -49,9 +49,9 @@ VOICE_PROFILES = {
         "speaker_boost": False,
     },
     "TODAY": {
-        "voice_id": None,
-        "stability": 0.65, "similarity_boost": 0.75,
-        "style": 0.15, "speed": 0.90,
+        "voice_id": "EXAVITQu4vr4xnSDxMaL",  # Sarah - Mature, Reassuring, Confident
+        "stability": 0.60, "similarity_boost": 0.75,
+        "style": 0.12, "speed": 0.90,
         "speaker_boost": False,
     },
     "АЛЕКС": {

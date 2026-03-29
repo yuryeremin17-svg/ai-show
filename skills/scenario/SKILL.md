@@ -75,8 +75,8 @@ SEEDANCE: [готовый промпт для Seedance]
 ВИЗУАЛ: [что видит зритель]
 ГОЛОС [КТО] ([тип: закадр/прямая речь/Telegram]): "[текст]"
 ЭМОЦИЯ ЗРИТЕЛЯ: [узнавание/удивление/смех/...]
-MIDJOURNEY: [промпт --ar 9:16 --oref [файл]]
-SEEDANCE: [промпт для анимации]
+MIDJOURNEY ([персонаж]): [промпт --ar 9:16 --oref [файл]] (макс 2 персонажа, 3+ = отдельные блоки)
+SEEDANCE: [промпт — 1 действие на клип]
 
 [6-8 шотов, включая 2 перехода между мирами]
 
@@ -366,8 +366,9 @@ SEEDANCE: [промпт]
 ЭМОЦИЯ:    [что чувствует зритель]
 РИТМ:      быстро | средне | медленно | ПАУЗА
 MOOD:      [эмоция сцены] / [цветовая температура] / [тип освещения]
-MIDJOURNEY: [prefix] + [описание] + [suffix] + [--oref/--sref параметры]
-SEEDANCE:  [промпт для анимации]
+MIDJOURNEY ([персонаж]): [prefix] + [1 персонаж + действие] + [suffix] + [--oref параметры]
+(если несколько персонажей — отдельный MIDJOURNEY-блок для каждого)
+SEEDANCE:  [промпт — 1 действие, time segments если >10 сек]
 ```
 
 5 новых полей по сравнению с v2.0: **ШОТСАЙЗ, ЗВУК, СУБТИТРЫ, РИТМ, MOOD**.
@@ -399,6 +400,11 @@ SEC  БИТ         МИР       ШОТ   ШОТСАЙЗ   РИТМ       ЭМО
 
 #### Шаг 1 — Собери MJ-промпт по формуле
 
+**⚠️ КРИТИЧЕСКОЕ ПРАВИЛО: максимум 2 персонажа на промпт.**
+- 1 персонаж — идеально.
+- 2 персонажа — можно, если оба с --oref и указана позиция (on the left / on the right).
+- 3+ персонажей — генерируй каждого ОТДЕЛЬНЫМ промптом. Юрий соберёт слои в CapCut.
+
 **Формула (порядок = приоритет, первые слова весят больше):**
 
 ```
@@ -425,7 +431,11 @@ warm golden lighting, soft ambient shadows, cozy professional atmosphere, matte 
 stylized warm illustration, soft 3D rendering, Pixar-style character design, tall thin man in black turtleneck with round glasses sitting at desk reading chat message on monitor, arms crossed serious disapproving expression, thought bubble above head with designer silhouette, modern bright office Dubai skyline through floor-to-ceiling windows, warm golden lighting, soft ambient shadows, cozy professional atmosphere, matte finish, subtle depth of field --ar 9:16 --oref [claude.png URL] --ow 400
 ```
 
-**Оптимальная длина:** 20-40 слов (без параметров). Больше 50 — MJ начинает игнорировать.
+**Оптимальная длина:** 20-40 слов (без prefix/suffix/параметров). Больше 50 — MJ начинает игнорировать хвост.
+
+**Если в сцене 2 персонажа** — можно в одном промпте с позициями (on the left / on the right) и двумя --oref.
+**Если 3+ персонажей** — пиши отдельный MJ-промпт для каждого: `MIDJOURNEY (Клодище):`, `MIDJOURNEY (Today):` и т.д.
+Юрий генерит каждый отдельно, собирает слои в CapCut.
 
 #### Шаг 2 — Собери Seedance-промпт по формуле
 
@@ -494,10 +504,11 @@ Clear facial features, stable face, no distortion, no deformation. Normal body p
 #### Шаг 5 — Проверь промпты перед отправкой
 
 Для каждого MJ-промпта:
+- [ ] **Макс 2 персонажа на промпт?** (3+ = отдельные блоки, нарушение = брак)
 - [ ] Начинается с STYLE PREFIX?
 - [ ] Заканчивается STYLE SUFFIX + параметры?
-- [ ] 20-40 слов (без параметров)?
-- [ ] --oref указан с правильным мастер-образом?
+- [ ] 20-40 слов (без prefix/suffix/параметров)?
+- [ ] --oref указан с правильным мастер-образом из masters/?
 - [ ] Нет запрещённых слов?
 - [ ] Шотсайз из раскадровки отражён? (close-up / medium / wide)
 

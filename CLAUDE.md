@@ -39,12 +39,12 @@ AI_SHOW/
 
 ## Рабочий процесс
 1. Юрий выбирает историю (из MY_STORIES.md или новую)
-2. Скилл scenario пишет раскадровку (визуал + текст + промпты MIDJOURNEY + промпты IMG2VID)
-3. Юрий генерит картинки (Midjourney ИЛИ ChatGPT/DALL-E) → `assets/scenes/<episode>/01.png`
-4. **(Опционально)** Юрий оживляет картинки через Kling/Runway (img2vid) → `assets/scenes/<episode>/01.mp4`
-5. Озвучка (ElevenLabs API / свой голос / gTTS) → `assets/voice/<episode>/`
+2. Скилл scenario пишет раскадровку (визуал + текст + промпты MIDJOURNEY + промпты SEEDANCE)
+3. Юрий генерит картинки (Midjourney) → `assets/scenes/<episode>/01.png` (макс 2 персонажа на кадр)
+4. **(Опционально)** Юрий оживляет картинки через Seedance 2.0 (Dreamina) → `assets/scenes/<episode>/01.mp4`
+5. Озвучка (ElevenLabs API / свой голос) → `assets/voice/<episode>/`
 6. Фоновая музыка (Suno AI / royalty-free) → `assets/music/`
-7. Сборка: `python3 scripts/assemble.py S01E01` → `episodes/S01E01.mp4`
+7. **Сборка: Юрий в CapCut** (ручной монтаж, все слои под контролем)
 
 ### Протокол серии
 
@@ -78,14 +78,19 @@ AI_SHOW/
 | Оживление (img2vid) | Seedance 2.0 через Dreamina / CapCut (доступно в ОАЭ) | Kling AI |
 | Голос | ElevenLabs (API, клон голоса) | gTTS (бесплатно, хуже качество) |
 | Музыка | Suno AI / Udio (свой трек) | Kevin MacLeod (royalty-free) |
-| Сборка | `scripts/assemble.py` v2 (Python + moviepy + ffmpeg) | — |
+| Сборка | CapCut (ручной монтаж Юрием) | — |
 
-Картинки и видеоклипы взаимозаменяемы — assemble.py берёт PNG/JPG/MP4.
-Если для кадра есть .mp4 — используется видео. Если нет — картинка с Ken Burns.
-Промпты для img2vid — в раскадровке (поле IMG2VID).
+Промпты для Seedance — в раскадровке (поле SEEDANCE).
 Документация Seedance 2.0 — `refs/SEEDANCE_GUIDE.md`.
 14 персонажей с именами — см. `SERIES_BIBLE.md` и `assets/characters/PROMPTS.md`.
 Арт-дирекция (палитра, свет, style lock, запрещённые элементы) — `refs/ART_DIRECTION.md`.
+
+### Правила промптов (критические)
+- **Midjourney: макс 2 персонажа на кадр.** 1-2 с --oref — ок. 3+ = каша, генерить отдельно → CapCut.
+- **Midjourney: 20-40 слов** (без параметров). Больше 50 — MJ игнорирует.
+- **Seedance: 1 действие на клип.** Не "кивает, встаёт, поворачивается". Одно движение.
+- **Seedance: time segments** для клипов >10 сек.
+- **Мастер-образы:** `--oref` с файлом из `assets/characters/masters/`. Юрий загружает в Midjourney и подставляет URL.
 
 ---
 

@@ -24,20 +24,39 @@ stylized warm illustration, soft 3D rendering, Pixar-style character design,
 warm golden lighting, soft ambient shadows, cozy professional atmosphere, matte finish, subtle depth of field --ar 9:16
 ```
 
-**Полный шаблон промпта:**
+**Полный шаблон промпта (макс 2 персонажа):**
 ```
-[STYLE PREFIX] + [описание сцены/персонажа] + [STYLE SUFFIX] + [--sref/--oref параметры]
+[STYLE PREFIX] + [персонаж + действие + эмоция] + [окружение] + [STYLE SUFFIX] + [параметры]
 ```
 
-**Пример:**
+**Хороший пример (1 персонаж, ~30 слов):**
 ```
-stylized warm illustration, soft 3D rendering, Pixar-style character design, tall thin man in black turtleneck with round glasses standing at whiteboard explaining diagram to colleagues in modern office with Dubai skyline, warm golden lighting, soft ambient shadows, cozy professional atmosphere, matte finish, subtle depth of field --ar 9:16 --oref [claude.png URL] --ow 400
+stylized warm illustration, soft 3D rendering, Pixar-style character design, tall thin man in black turtleneck with round glasses standing at whiteboard pointing at flow diagram, confident focused expression, modern bright office Dubai skyline through windows, warm golden lighting, soft ambient shadows, cozy professional atmosphere, matte finish, subtle depth of field --ar 9:16 --oref [claude_master.png] --ow 400
 ```
+
+**ПЛОХОЙ пример (3 персонажа = каша, НЕ ДЕЛАТЬ):**
+```
+...three cartoon characters working in sequence: first a young guy in purple hoodie, second a creative type in dark red beret, third a short stocky man in brown vest...
+```
+MJ путает атрибуты, лица сливаются. Каждого отдельно!
 
 ### Принцип: меньше слов = меньше дрифта
 Больше стилевых слов -- больше "стилевого супа". Модель усредняет все токены,
 и результат непредсказуем. 8-12 стилевых токенов -- потолок. Наш prefix+suffix
 укладывается в это правило.
+
+### КРИТИЧЕСКОЕ ПРАВИЛО: максимум 2 персонажа на кадр
+
+Midjourney V7 с --oref справляется с 1-2 персонажами. С 3+ путает атрибуты,
+сливает лица, теряет идентичность. **Правило:**
+
+- **1 персонаж** — идеально. Максимальный контроль.
+- **2 персонажа** — можно. Условия: оба с `--oref`, чёткая позиция (on the left / on the right).
+- **3+ персонажей** — НЕ делать. Генерируй по отдельности, собирай в CapCut.
+- `--oref` поддерживает несколько мастер-образов: `--oref [img1] [img2] --ow 400`
+
+**Правило длины: 20-40 слов** (без prefix/suffix/параметров).
+Больше 50 слов — MJ начинает игнорировать хвост промпта.
 
 ---
 
@@ -416,9 +435,13 @@ IMG2VID: [описание движения]
 ВИЗУАЛ: Клодище за столом, разводит руками. На экране -- отчёт с ошибками.
 ГОЛОС: "Перестраховался. Больше не буду."
 MOOD: вина + юмор / warm amber / soft ambient light
-MIDJOURNEY: stylized warm illustration, soft 3D rendering, Pixar-style character design, tall thin man in black turtleneck with round glasses sitting at desk spreading hands apologetically, monitor behind showing report with red marks, guilty sheepish smile, modern bright office interior, warm golden lighting, soft ambient shadows, cozy professional atmosphere, matte finish, subtle depth of field --ar 9:16 --oref [claude.png] --ow 400 --sref [anchor.png] --sw 75
-IMG2VID: character spreads hands slightly, adjusts glasses nervously, monitor glows in background
+MIDJOURNEY: stylized warm illustration, soft 3D rendering, Pixar-style character design, tall thin man in black turtleneck with round glasses sitting at desk spreading hands apologetically, guilty sheepish smile, monitor behind showing report with red marks, modern bright office, warm golden lighting, soft ambient shadows, cozy professional atmosphere, matte finish, subtle depth of field --ar 9:16 --oref [claude_master.png] --ow 400
+SEEDANCE: @Image1 as the first frame. The man slowly spreads his hands with an apologetic expression, then adjusts glasses nervously. Camera holds steady with slight push-in, eye level. Warm golden afternoon light, Pixar-style illustration. Clear facial features, stable face, no distortion, no deformation. Normal body proportions, natural structure. Same character, consistent clothing, unchanged hairstyle. 4K ultra-high definition, cinematic quality, natural colors, soft lighting. Natural and fluid motion, smooth and stable footage.
 ```
+
+**Правила промптов (см. также CLAUDE.md):**
+- MIDJOURNEY: макс 2 персонажа на промпт. 20-40 слов описания. `--oref` с мастер-образом.
+- SEEDANCE: 1 действие на клип. Time segments для >10 сек. Constraint block обязателен.
 
 ---
 
@@ -434,6 +457,7 @@ SUFFIX:  warm golden lighting, soft ambient shadows, cozy professional atmospher
 ЦВЕТ:    Amber #F5A623 | Cream #FFF5E1 | Honey #E8A317 | Peach #FFDAB9
 PARAMS:  --oref [char.png] --ow 400 --sref [anchor.png] --sw 75 --ar 9:16
 
+ПРАВИЛА: макс 2 персонажа на промпт | 20-40 слов | шотсайз в промпте (close-up/medium/wide)
 ЗАПРЕЩЕНО: photorealistic, anime, dark, neon, hyperdetailed, HDR, flat, sketch
 СТОП:      realistic -> stylized | detailed -> clean | complex -> focused | dark -> dramatic
 ```
