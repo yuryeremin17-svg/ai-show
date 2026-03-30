@@ -55,27 +55,33 @@ VOICE_PROFILES = {
         "speaker_boost": False,
     },
     "АЛЕКС": {
-        "voice_id": None,
+        "voice_id": "TX3LPaxmHKxFdv7VOQHJ",  # Liam - Energetic, Social Media Creator
         "stability": 0.35, "similarity_boost": 0.70,
         "style": 0.45, "speed": 1.12,
         "speaker_boost": False,
     },
     "УОРРЕН": {
-        "voice_id": None,
+        "voice_id": "onwK4e9ZLuTAKqWW03F9",  # Daniel - Steady Broadcaster
         "stability": 0.60, "similarity_boost": 0.75,
         "style": 0.15, "speed": 0.95,
         "speaker_boost": False,
     },
     "БАЙРОН": {
-        "voice_id": None,
+        "voice_id": "JBFqnCBsd6RMkjVDRZzb",  # George - Warm, Captivating Storyteller
         "stability": 0.40, "similarity_boost": 0.70,
         "style": 0.40, "speed": 0.88,
         "speaker_boost": False,
     },
     "ШЕРЛОК": {
-        "voice_id": None,
+        "voice_id": "pqHfZKP75CvOlQylNhV4",  # Bill - Wise, Mature, Balanced
         "stability": 0.65, "similarity_boost": 0.75,
         "style": 0.10, "speed": 1.0,
+        "speaker_boost": False,
+    },
+    "АЛЬБЕРТ": {
+        "voice_id": "CwhRBWXzGAHq8TQ4Fs17",  # Roger - Laid-Back, Casual, Resonant
+        "stability": 0.55, "similarity_boost": 0.75,
+        "style": 0.08, "speed": 0.85,
         "speaker_boost": False,
     },
 }

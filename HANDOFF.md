@@ -85,22 +85,25 @@
 
 ## Персонажи (полный состав)
 
-| # | Имя | Роль | Файл | Голос | Появления |
-|---|-----|------|------|-------|-----------|
-| 1 | Юрий | Босс | yuri_real.jpg | ✅ клон | S01E01, S01E02 |
-| 2 | Клодище | Зам | claude.png | ✅ Eric | S01E01, S01E02 |
-| 3 | Тоня | Ассистент (Today) | today.png | ✅ Sarah | S01E01, S01E02 |
-| 4 | Алекс | Аналитик AI | scout_ai.png | ⬜ | S01E01 |
-| 5 | Уоррен | Аналитик Biz | scout_biz.png | ⬜ | — |
-| 6 | Нео | Аналитик GitHub | scout_github.png | ⬜ | — |
-| 7 | Байрон | Копирайтер | content.png | ⬜ | S01E01 |
-| 8 | Шерлок | Контролёр | qa.png | ⬜ | S01E01 |
-| 9 | Альберт | Аналитик | analyst.png | ⬜ | — |
-| 10 | Тесла | Конструктор | design_bureau.png | ⬜ | — |
-| 11 | Фрида | Клод-Дизайн | claude_design.png | ⬜ | — |
-| 12 | Люк | Клод-Видео | claude_video.png | ⬜ | — |
-| 13 | Артур | Клод-Брокер | claude_broker.png | ⬜ | — |
-| 14 | Стелла | Клод-Астролог | claude_astro.png | ⬜ | — |
+| # | Имя | Роль | Файл | Голос (ElevenLabs) | voice_id | Появления |
+|---|-----|------|------|-------------------|----------|-----------|
+| 1 | Юрий | Босс | yuri_real.jpg | ✅ my Dubai Agent (клон) | `IIKFPiMReo9YmycfbMxL` | S01E01, S01E02 |
+| 2 | Клодище | Зам | claude.png | ✅ Eric (Smooth, Trustworthy) | `cjVigY5qzO86Huf0OWal` | S01E01, S01E02 |
+| 3 | Тоня | Ассистент (Today) | today.png | ✅ Sarah (Mature, Reassuring) | `EXAVITQu4vr4xnSDxMaL` | S01E01, S01E02 |
+| 4 | Алекс | Аналитик AI | scout_ai.png | ✅ Liam (Energetic, Social Media) | `TX3LPaxmHKxFdv7VOQHJ` | S01E01 |
+| 5 | Уоррен | Аналитик Biz | scout_biz.png | ✅ Daniel (Steady Broadcaster) | `onwK4e9ZLuTAKqWW03F9` | — |
+| 6 | Нео | Аналитик GitHub | scout_github.png | ⬜ нужен подбор | — | — |
+| 7 | Байрон | Копирайтер | content.png | ✅ George (Warm Storyteller) | `JBFqnCBsd6RMkjVDRZzb` | S01E01 |
+| 8 | Шерлок | Контролёр | qa.png | ✅ Bill (Wise, Mature, Balanced) | `pqHfZKP75CvOlQylNhV4` | S01E01 |
+| 9 | Альберт | Аналитик | analyst.png | ✅ Roger (Laid-Back, Resonant) | `CwhRBWXzGAHq8TQ4Fs17` | — |
+| 10 | Тесла | Конструктор | design_bureau.png | ⬜ нужен подбор | — | — |
+| 11 | Фрида | Клод-Дизайн | claude_design.png | ⬜ нужен подбор (жен.) | — | — |
+| 12 | Люк | Клод-Видео | claude_video.png | ⬜ нужен подбор | — | — |
+| 13 | Артур | Клод-Брокер | claude_broker.png | ⬜ нужен подбор | — | — |
+| 14 | Стелла | Клод-Астролог | claude_astro.png | ⬜ нужен подбор (жен.) | — | — |
+
+> Единый источник правды: `scripts/config.py` → VOICE_PROFILES
+> Тестовые MP3: `assets/voice/test/` (5 файлов — послушать перед утверждением)
 
 ## Предыдущие сессии
 - **Сессия 10 (29 марта):** Пайплайн v2, S01E02 раскадровка + 22 голоса, Тоня с именем и голосом
