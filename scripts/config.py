@@ -103,6 +103,8 @@ GENITIVE_TO_NOM = {
     "СТЕЛЛЫ": "СТЕЛЛА",
     "НЕО": "НЕО",
     "TODAY": "TODAY",
+    "ТОНЯ": "TODAY",
+    "ТОНИ": "TODAY",
 }
 
 # ── Audio Levels (источник: VOICE_DIRECTION_GUIDE.md секция 3.4) ──

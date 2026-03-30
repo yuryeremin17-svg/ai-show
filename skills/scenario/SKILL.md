@@ -531,11 +531,11 @@ Clear facial features, stable face, no distortion, no deformation. Normal body p
 
 | Персонаж | Тембр | Темп | Placement | ElevenLabs Settings |
 |----------|-------|------|-----------|-------------------|
-| **Юрий** | Тёплый баритон, уверенный, с усмешкой | Нормальный (120-140 сл/мин) | Chest voice | stability: 0.65, similarity: 0.85, style: 0.05, speed: 0.90 |
-| **Клодище** | Мягкий тенор, интеллигентный, чуть занудный | Средне-быстрый (130-150) | Head + chest mix | stability: 0.45, similarity: 0.75, style: 0.12, speed: 0.95 |
-| **Today** | Спокойный женский, собранный, чуть ироничный | Ровный, без спешки (110-130) | Chest, низкий для женского | stability: 0.60, similarity: 0.80, style: 0.08, speed: 0.88 |
-| **Алекс** | Молодой, энергичный, восторженный | Быстрый (150-170) | High chest, bright | stability: 0.30, similarity: 0.70, style: 0.18, speed: 1.10 |
-| **Шерлок** | Сухой, придирчивый, через нос | Медленный-нормальный (110-130) | Nasal, tight | stability: 0.55, similarity: 0.75, style: 0.10, speed: 0.85 |
+| **Юрий** | Тёплый баритон, уверенный, с усмешкой | Нормальный (120-140 сл/мин) | Chest voice | stability: 0.60, similarity: 0.85, style: 0.20, speed: 0.95 |
+| **Клодище** | Мягкий тенор, интеллигентный, чуть занудный | Средне-быстрый (130-150) | Head + chest mix | stability: 0.50, similarity: 0.75, style: 0.30, speed: 0.92 |
+| **Тоня (Today)** | Спокойный женский, собранный, чуть ироничный | Ровный, без спешки (110-130) | Chest, низкий для женского | stability: 0.60, similarity: 0.75, style: 0.12, speed: 0.90 |
+| **Алекс** | Молодой, энергичный, восторженный | Быстрый (150-170) | High chest, bright | stability: 0.35, similarity: 0.70, style: 0.45, speed: 1.12 |
+| **Шерлок** | Сухой, придирчивый, через нос | Медленный-нормальный (110-130) | Nasal, tight | stability: 0.65, similarity: 0.75, style: 0.10, speed: 1.0 |
 
 Полные профили 14 персонажей: `refs/VOICE_DIRECTION_GUIDE.md`, секция 2.
 
