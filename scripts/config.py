@@ -55,27 +55,27 @@ VOICE_PROFILES = {
         "speaker_boost": False,
     },
     "АЛЕКС": {
-        "voice_id": "TX3LPaxmHKxFdv7VOQHJ",  # Liam - Energetic, Social Media Creator
-        "stability": 0.35, "similarity_boost": 0.70,
-        "style": 0.45, "speed": 1.12,
+        "voice_id": "3XOBzXhnDY98yeWQ3GdM",  # Brayden - Cheery, Clear, Chill (young) ✓ Юрий выбрал
+        "stability": 0.30, "similarity_boost": 0.70,
+        "style": 0.50, "speed": 1.15,
         "speaker_boost": False,
     },
     "УОРРЕН": {
-        "voice_id": "onwK4e9ZLuTAKqWW03F9",  # Daniel - Steady Broadcaster
+        "voice_id": "iP95p4xoKVk53GoZ742B",  # Chris - Charming, Down-to-Earth ✓ Юрий выбрал
         "stability": 0.60, "similarity_boost": 0.75,
         "style": 0.15, "speed": 0.95,
         "speaker_boost": False,
     },
     "БАЙРОН": {
-        "voice_id": "JBFqnCBsd6RMkjVDRZzb",  # George - Warm, Captivating Storyteller
+        "voice_id": "bIHbv24MWmeRgasZH58o",  # Will - Relaxed Optimist (young) ✓ Юрий выбрал
         "stability": 0.40, "similarity_boost": 0.70,
         "style": 0.40, "speed": 0.88,
         "speaker_boost": False,
     },
     "ШЕРЛОК": {
-        "voice_id": "pqHfZKP75CvOlQylNhV4",  # Bill - Wise, Mature, Balanced
-        "stability": 0.65, "similarity_boost": 0.75,
-        "style": 0.10, "speed": 1.0,
+        "voice_id": "pqHfZKP75CvOlQylNhV4",  # Bill - Wise, Mature (old/grumpy settings) ✓ Юрий выбрал
+        "stability": 0.40, "similarity_boost": 0.80,
+        "style": 0.20, "speed": 0.82,
         "speaker_boost": False,
     },
     "АЛЬБЕРТ": {

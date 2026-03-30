@@ -90,11 +90,11 @@
 | 1 | Юрий | Босс | yuri_real.jpg | ✅ my Dubai Agent (клон) | `IIKFPiMReo9YmycfbMxL` | S01E01, S01E02 |
 | 2 | Клодище | Зам | claude.png | ✅ Eric (Smooth, Trustworthy) | `cjVigY5qzO86Huf0OWal` | S01E01, S01E02 |
 | 3 | Тоня | Ассистент (Today) | today.png | ✅ Sarah (Mature, Reassuring) | `EXAVITQu4vr4xnSDxMaL` | S01E01, S01E02 |
-| 4 | Алекс | Аналитик AI | scout_ai.png | ✅ Liam (Energetic, Social Media) | `TX3LPaxmHKxFdv7VOQHJ` | S01E01 |
-| 5 | Уоррен | Аналитик Biz | scout_biz.png | ✅ Daniel (Steady Broadcaster) | `onwK4e9ZLuTAKqWW03F9` | — |
+| 4 | Алекс | Аналитик AI | scout_ai.png | ✅ Brayden (Cheery, Chill, young) | `3XOBzXhnDY98yeWQ3GdM` | S01E01 |
+| 5 | Уоррен | Аналитик Biz | scout_biz.png | ✅ Chris (Charming, Down-to-Earth) | `iP95p4xoKVk53GoZ742B` | — |
 | 6 | Нео | Аналитик GitHub | scout_github.png | ⬜ нужен подбор | — | — |
-| 7 | Байрон | Копирайтер | content.png | ✅ George (Warm Storyteller) | `JBFqnCBsd6RMkjVDRZzb` | S01E01 |
-| 8 | Шерлок | Контролёр | qa.png | ✅ Bill (Wise, Mature, Balanced) | `pqHfZKP75CvOlQylNhV4` | S01E01 |
+| 7 | Байрон | Копирайтер | content.png | ✅ Will (Relaxed Optimist, young) | `bIHbv24MWmeRgasZH58o` | S01E01 |
+| 8 | Шерлок | Контролёр | qa.png | ✅ Bill (Wise, old/grumpy) | `pqHfZKP75CvOlQylNhV4` | S01E01 |
 | 9 | Альберт | Аналитик | analyst.png | ✅ Roger (Laid-Back, Resonant) | `CwhRBWXzGAHq8TQ4Fs17` | — |
 | 10 | Тесла | Конструктор | design_bureau.png | ⬜ нужен подбор | — | — |
 | 11 | Фрида | Клод-Дизайн | claude_design.png | ⬜ нужен подбор (жен.) | — | — |
